@@ -11,3 +11,4 @@ media/course
 # SQLite database files
 
 *.sqlite3
+*.pyc
