@@ -21,6 +21,9 @@ def detect_language(request):
             with open('ContentHandler/language.json') as f:
                 data = json.load(f)
                 f.close()
-                lang=data[lang]
+                try:
+                    lang=data[lang]
+                except:
+                    lang={'name':'...., Sorry cannot detect this language'}
             return Response(lang, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
